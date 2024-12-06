@@ -99,8 +99,8 @@ class App extends React.Component
                         <Route path="/register" element={<Register {...authProps} />}/>
                         <Route path="/login" element={<Login {...authProps} />}/>
                         <Route path="/view_notes" element={<ViewNotes/>}/>
-                        <Route path="/view_notes" element={<CreateNote/>}/>
-                        <Route path="/view_notes" element={<DeleteNote/>}/>
+                        <Route path="/create_note" element={<CreateNote/>}/>
+                        <Route path="/delete_note" element={<DeleteNote/>}/>
                     </Routes>
                 </main>
             </div>
