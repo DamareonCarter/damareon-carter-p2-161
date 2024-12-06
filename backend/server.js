@@ -28,7 +28,6 @@ app.get('/api/auth', auth, async (req, res) => {
 app.get('/api/notes', auth, async (req, res) => {
     try {
         const notes = await Note.find();
-        console.log(notes);
         res.json(notes);
     } catch (error) {
         console.error(error);

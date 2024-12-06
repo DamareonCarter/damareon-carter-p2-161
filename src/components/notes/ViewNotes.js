@@ -31,7 +31,7 @@ const ViewNotes = () => {
 
     return (
         <div>
-            <h2>View Notes</h2>
+            <h2>View Notes (many need to reload page)</h2>
             {noteData.map((obj, i) => {
                 return (
                     <div key={i}>
