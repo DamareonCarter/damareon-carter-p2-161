@@ -51,7 +51,7 @@ const Login = ({ authenticateUser }) => {
 
     return (
         <div>
-            <h2>Register</h2>
+            <h2>Login</h2>
             <div>
                 <input type="text" placeholder="Email" name="email" value={email} onChange={e => onChange(e)}/>
             </div>

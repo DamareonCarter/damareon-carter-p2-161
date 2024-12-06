@@ -5,6 +5,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.js";
 import Register from "./components/Register.js";
 import Login from "./components/Login.js";
+import ViewNotes from './components/notes/ViewNotes.js';
+import CreateNote from './components/notes/CreateNote.js';
+import DeleteNote from './components/notes/DeleteNote.js';
 
 class App extends React.Component
 {
@@ -75,6 +78,19 @@ class App extends React.Component
                             <li><Link to="" onClick={this.logout}>Log out</Link></li> :
                             <li><Link to="/login">Login</Link></li>
                         }
+                        {user ?
+                            <li><Link to="/view_notes">View Notes</Link></li> :
+                            <></>
+                        }
+                        {user ?
+                            <li><Link to="/create_note">Create Note</Link></li> :
+                            <></>
+                        }
+                        {user ?
+                            <li><Link to="/delete_note">Delete Note</Link></li> :
+                            <></>
+                        }
+                        
                     </ul>
                 </header>
                 <main>
@@ -82,6 +98,9 @@ class App extends React.Component
                         <Route path="/" element={<Home user={user} data={data} />}/>
                         <Route path="/register" element={<Register {...authProps} />}/>
                         <Route path="/login" element={<Login {...authProps} />}/>
+                        <Route path="/view_notes" element={<ViewNotes/>}/>
+                        <Route path="/view_notes" element={<CreateNote/>}/>
+                        <Route path="/view_notes" element={<DeleteNote/>}/>
                     </Routes>
                 </main>
             </div>
