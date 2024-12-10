@@ -7,6 +7,7 @@ import Register from "./components/Register.js";
 import Login from "./components/Login.js";
 import ViewNotes from './components/notes/ViewNotes.js';
 import CreateNote from './components/notes/CreateNote.js';
+import EditNote from './components/notes/EditNote.js';
 import DeleteNote from './components/notes/DeleteNote.js';
 
 class App extends React.Component
@@ -87,6 +88,10 @@ class App extends React.Component
                             <></>
                         }
                         {user ?
+                            <li><Link to="/edit_note">Edit Note</Link></li> :
+                            <></>
+                        }
+                        {user ?
                             <li><Link to="/delete_note">Delete Note</Link></li> :
                             <></>
                         }
@@ -100,6 +105,7 @@ class App extends React.Component
                         <Route path="/login" element={<Login {...authProps} />}/>
                         <Route path="/view_notes" element={<ViewNotes/>}/>
                         <Route path="/create_note" element={<CreateNote/>}/>
+                        <Route path="/edit_note" element={<EditNote/>}/>
                         <Route path="/delete_note" element={<DeleteNote/>}/>
                     </Routes>
                 </main>

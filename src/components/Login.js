@@ -14,7 +14,7 @@ const Login = ({ authenticateUser }) => {
     const { errors } = errorData;
 
     const onChange = e => {
-        const {name, value } = e.target;
+        const { name, value } = e.target;
 
         setUserData({
             ...userData,

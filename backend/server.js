@@ -139,6 +139,30 @@ app.post('/api/notes',
         }
     }
 );
+app.put('/api/notes/:id', auth, async (req, res) => {
+    try {
+        const { title, text } = req.body;
+        const note = await Note.findById(req.params.id);
+
+        if (!note) {
+            return res.status(404).json({ msg: "Note not found" });
+        }
+
+        if (note.user.toString() !== req.user.id) {
+            return res.status(401).json({ msg: "User not authorized" });
+        }
+
+        note.title = title || note.title;
+        note.text = text || note.text;
+
+        await note.save();
+
+        res.json(note);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server error");
+    }
+});
 app.delete('/api/notes/:id', auth, async (req, res) => {
     try {
         const note = await Note.findById(req.params.id);
