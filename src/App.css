@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding: 0em;
+  margin: 0em;
 }
 
 .App-logo {
@@ -17,6 +19,7 @@
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
+  flex: 1;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -52,6 +55,7 @@
 
 main {
   margin: 30px auto;
+  display: inline-block;
 }
 
 @keyframes App-logo-spin {
@@ -61,4 +65,16 @@ main {
   to {
     transform: rotate(360deg);
   }
+}
+
+article {
+  float: left;
+  width: 21%;
+  padding: 1%;
+  margin: 1%;
+  background-color: wheat;
+}
+
+.view-notes {
+  width: 100%;
 }

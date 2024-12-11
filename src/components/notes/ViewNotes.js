@@ -30,15 +30,15 @@ const ViewNotes = () => {
     getNotes();
 
     return (
-        <div>
+        <div id="view-notes">
             <h2>View Notes (many need to reload page)</h2>
             {noteData.map((obj, i) => {
                 return (
-                    <div key={i}>
-                        <h3>{obj.title}</h3>
-                        <h4>{obj._id}</h4>
+                    <article key={i}>
+                        <h3><u>{obj.title}</u></h3>
+                        <h4>ID: {obj._id}</h4>
                         <p>{obj.text}</p>
-                    </div>
+                    </article>
                 )
             })}
         </div>
